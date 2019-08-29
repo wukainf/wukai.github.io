@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="git工作流,">
+  <meta name="keywords" content="Flask,">
 
 
 
@@ -79,20 +79,21 @@
 
 
 
-<meta name="description" content="git flow工作流极简版，此篇适用于已掌握了基本git命令的情况。">
-<meta name="keywords" content="git工作流">
+<meta name="description" content="用Flask搭建简易的服务，使得数据接口化，服务化">
+<meta name="keywords" content="Flask">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git flow工作流">
-<meta property="og:url" content="http://yoursite.com/2019/07/30/git-flow工作流/index/index.html">
+<meta property="og:title" content="Flask搭建简易服务器">
+<meta property="og:url" content="http://yoursite.com/2019/08/29/Flask搭建简易服务器/index/index.html">
 <meta property="og:site_name" content="随笔">
-<meta property="og:description" content="git flow工作流极简版，此篇适用于已掌握了基本git命令的情况。">
+<meta property="og:description" content="用Flask搭建简易的服务，使得数据接口化，服务化">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/git_flow_pic_1.png">
-<meta property="og:updated_time" content="2019-07-30T08:40:45.559Z">
+<meta property="og:image" content="http://yoursite.com/images/image-20190829190322400.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20190829190632099.png">
+<meta property="og:updated_time" content="2019-08-29T12:15:19.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git flow工作流">
-<meta name="twitter:description" content="git flow工作流极简版，此篇适用于已掌握了基本git命令的情况。">
-<meta name="twitter:image" content="http://yoursite.com/images/git_flow_pic_1.png">
+<meta name="twitter:title" content="Flask搭建简易服务器">
+<meta name="twitter:description" content="用Flask搭建简易的服务，使得数据接口化，服务化">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20190829190322400.png">
 
 
 
@@ -122,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/30/git-flow工作流/index/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/29/Flask搭建简易服务器/index/">
 
 
 
 
 
-  <title>git flow工作流 | 随笔</title>
+  <title>Flask搭建简易服务器 | 随笔</title>
   
 
 
@@ -235,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/git-flow工作流/index/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/Flask搭建简易服务器/index/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wu Kai">
@@ -252,7 +253,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git flow工作流</h1>
+          <h1 class="post-title" itemprop="name headline">Flask搭建简易服务器</h1>
         
 
         <div class="post-meta">
@@ -264,8 +265,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-30T15:15:17+08:00">
-                2019-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T22:15:17+08:00">
+                2019-08-29
               </time>
             
 
@@ -287,8 +288,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/后端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">后端开发</span>
                   </a>
                 </span>
 
@@ -311,7 +312,7 @@
 
           
               <div class="post-description">
-                  git flow工作流极简版，此篇适用于已掌握了基本git命令的情况。
+                  用Flask搭建简易的服务，使得数据接口化，服务化
               </div>
           
 
@@ -328,47 +329,14 @@
       
 
       
-        <h2 id="分支介绍"><a href="#分支介绍" class="headerlink" title="分支介绍"></a>分支介绍</h2><p><img src="/images/git_flow_pic_1.png" alt="git flow简图"></p>
-<ul>
-<li><p>master<br>  主分支，稳定版本，需要用tag标签管理版本号</p>
-</li>
-<li><p>develop<br>  开发分支，从master最新版本拉取到本地，进行新一轮的版本迭代，迭代结束后，提交到release分支</p>
-</li>
-<li><p>release<br>  发布分支，此分支的内容直接面向用户，可用来公测，及公测的bug修复，fork于develop最新版本（此时该版迭代结束，不能于此分支加入新功能），公测稳定后提交到master分支，删除发布分支，并合并回develop分支（这一步很重要）</p>
-</li>
-<li><p>hotfix<br>  热修复分支，用于线上紧急问题修复，从master最新版本直接fork代码，修复完直接提交到master分支，并更新到develop分支（此步不要忽略）</p>
-</li>
-<li><p>feature（可选）<br>  功能分支，以本地develop分支为父分支，每开发一个功能，从本地develop分支checkout出一个功能分支，开发测试完成，合并到本地develop分支</p>
-</li>
-</ul>
-<h2 id="整体流程实战"><a href="#整体流程实战" class="headerlink" title="整体流程实战"></a>整体流程实战</h2><p>所以一次版本迭代的流程就是：</p>
-<ul>
-<li><p>创建开发分支</p>
-<p>  初始化版本：创建develop分支并提交到远端，</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch develop</span><br><span class="line">git push -u origin develop</span><br></pre></td></tr></table></figure>
-<p>  新版本开发：由于新版本迭代之前，master和develop分支一致，所以直接从远程develop创建本地的跟踪分支，</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b develop origin/develop</span><br></pre></td></tr></table></figure>
-<p>  不规范版本开发：需要保持develop和master分支一致后，再进行开发</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b master origin/master</span><br><span class="line">git checkout -b develop origin/develop</span><br><span class="line">git merge master</span><br><span class="line">git push -u origin develop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>功能开发（可选）</p>
-<p>  创建功能开发分支，完成功能后提交，merge到develop分支，删除功能分支，避免功能分支越积越多</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b some-feature develop</span><br><span class="line">git add . &amp;&amp; git commit -m &apos;add:some feature&apos;</span><br><span class="line">git checkout develop &amp;&amp; git merge some-feature &amp;&amp; git push</span><br><span class="line">git branch -d some-feature</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>发布</p>
-<p>  n个功能开发完成后，将develop分支发布为realease-版本号</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b release-0.1 develop</span><br><span class="line">git push (-u) origin release</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>稳定版本</p>
-<p>  稳定后即可合并到master分支，切记，合并回develop分支，下个版本迭代，develop与master分支即为一致</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge release-0.1</span><br><span class="line">git push</span><br><span class="line">git checkout develop</span><br><span class="line">git merge release-0.1</span><br><span class="line">git push</span><br><span class="line">git branch -d release-0.1</span><br></pre></td></tr></table></figure>
-<p>  并打上tag，便于版本管理</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a 0.1 -m &quot;Initial public release&quot; master</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>线上问题修复，提交到master分支，并更新到develop分支</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hotfix origin/master</span><br><span class="line">git add . &amp;&amp; git commit -m &apos;fix:some fix&apos;</span><br><span class="line">git push origin/master</span><br><span class="line">git checkout develop</span><br><span class="line">git merge hotfix</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h1 id="Flask搭建简易服务器"><a href="#Flask搭建简易服务器" class="headerlink" title="Flask搭建简易服务器"></a>Flask搭建简易服务器</h1><p><strong>核心组件：端口监听实例， 路由表</strong></p>
+<h3 id="端口监听实例"><a href="#端口监听实例" class="headerlink" title="端口监听实例"></a>端口监听实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__) <span class="comment"># 一般传入模块名</span></span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
+<p>如上述代码，启动一个后台运行的监听实例，监听指定端口（默认为localhost:5000）接收的HTTP请求</p>
+<h3 id="路由表"><a href="#路由表" class="headerlink" title="路由表"></a>路由表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/test')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'test handler.'</span></span><br></pre></td></tr></table></figure>
+<p>对监听到的HTTP请求，选择性做处理</p>
+<h3 id="最小实例"><a href="#最小实例" class="headerlink" title="最小实例"></a>最小实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__) <span class="comment"># 一般传入模块名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/test')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'test handler.'</span></span><br><span class="line"></span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="/images/image-20190829190322400.png" alt="服务监听"></p>
+<p><img src="/images/image-20190829190632099.png" alt="请求处理"></p>
 
       
     </div>
@@ -386,7 +354,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git工作流/" rel="tag"># git工作流</a>
+            <a href="/tags/Flask/" rel="tag"># Flask</a>
           
         </div>
       
@@ -399,15 +367,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/30/git-flow工作流/index/" rel="next" title="git flow工作流">
+                <i class="fa fa-chevron-left"></i> git flow工作流
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/29/Flask搭建简易服务器/index/" rel="prev" title="Flask搭建简易服务器">
-                Flask搭建简易服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -539,7 +507,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支介绍"><span class="nav-number">1.</span> <span class="nav-text">分支介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整体流程实战"><span class="nav-number">2.</span> <span class="nav-text">整体流程实战</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flask搭建简易服务器"><span class="nav-number">1.</span> <span class="nav-text">Flask搭建简易服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#端口监听实例"><span class="nav-number">1.0.1.</span> <span class="nav-text">端口监听实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由表"><span class="nav-number">1.0.2.</span> <span class="nav-text">路由表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小实例"><span class="nav-number">1.0.3.</span> <span class="nav-text">最小实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">1.0.4.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></div>
             
 
           </div>
