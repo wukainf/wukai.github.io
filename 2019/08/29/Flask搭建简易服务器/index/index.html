@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/image-20190829190322400.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20190829190632099.png">
-<meta property="og:updated_time" content="2019-08-29T12:15:19.875Z">
+<meta property="og:updated_time" content="2019-08-29T12:16:32.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask搭建简易服务器">
 <meta name="twitter:description" content="用Flask搭建简易的服务，使得数据接口化，服务化">
@@ -329,7 +329,7 @@
       
 
       
-        <h1 id="Flask搭建简易服务器"><a href="#Flask搭建简易服务器" class="headerlink" title="Flask搭建简易服务器"></a>Flask搭建简易服务器</h1><p><strong>核心组件：端口监听实例， 路由表</strong></p>
+        <p><strong>核心组件：端口监听实例， 路由表</strong></p>
 <h3 id="端口监听实例"><a href="#端口监听实例" class="headerlink" title="端口监听实例"></a>端口监听实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__) <span class="comment"># 一般传入模块名</span></span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
 <p>如上述代码，启动一个后台运行的监听实例，监听指定端口（默认为localhost:5000）接收的HTTP请求</p>
 <h3 id="路由表"><a href="#路由表" class="headerlink" title="路由表"></a>路由表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/test')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'test handler.'</span></span><br></pre></td></tr></table></figure>
@@ -507,7 +507,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flask搭建简易服务器"><span class="nav-number">1.</span> <span class="nav-text">Flask搭建简易服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#端口监听实例"><span class="nav-number">1.0.1.</span> <span class="nav-text">端口监听实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由表"><span class="nav-number">1.0.2.</span> <span class="nav-text">路由表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小实例"><span class="nav-number">1.0.3.</span> <span class="nav-text">最小实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">1.0.4.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#端口监听实例"><span class="nav-number">1.</span> <span class="nav-text">端口监听实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由表"><span class="nav-number">2.</span> <span class="nav-text">路由表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小实例"><span class="nav-number">3.</span> <span class="nav-text">最小实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">4.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
             
 
           </div>
